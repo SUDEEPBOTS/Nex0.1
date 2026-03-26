@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { 
   BotMessageSquare, Music, Server, Terminal, Heart, 
   ShieldCheck, Zap, Headset, Globe, Code, ShieldAlert, Rocket, 
-  ChevronDown, Menu, X, Bell, Gamepad2, Swords, Lock, Users, Shield, ShoppingCart, BadgeCheck
+  ChevronDown, Menu, X, Bell, Gamepad2, Swords, Lock, Users, Shield, ShoppingCart, BadgeCheck, Ban
 } from 'lucide-react';
 import { FaGithub, FaInstagram, FaTelegramPlane } from 'react-icons/fa';
 import Background from './components/Background';
@@ -194,12 +194,23 @@ export default function App() {
             Not just another network. We build <span className="text-white">enterprise-grade</span> Telegram bots and high-performance ecosystems.
           </motion.p>
           
+          {/* Hero Main Buttons */}
           <motion.div className="flex flex-wrap justify-center gap-5" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
             <motion.a href="#bots" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-white text-black hover:bg-gray-200 font-bold px-8 py-4 rounded-2xl flex items-center gap-2 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]">
               <Zap size={20}/> Initialize System
             </motion.a>
             <motion.a href="#network" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-black/50 backdrop-blur-md border border-white/10 hover:border-white/30 text-white font-bold px-8 py-4 rounded-2xl flex items-center gap-2 transition-all">
                View Network
+            </motion.a>
+          </motion.div>
+
+          {/* 🔥 NEW: Hero Bhaichara & Banning Buttons */}
+          <motion.div className="flex flex-wrap justify-center w-full gap-4 mt-8" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
+            <motion.a href="https://bhaichra.vercel.app/" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-red-900/40 to-black border border-red-600/50 hover:border-red-500 text-white font-bold px-6 py-3 rounded-xl flex items-center gap-2 transition-all">
+              <Swords size={18}/> BHAICHARA
+            </motion.a>
+            <motion.a href="https://nexbanig.vercel.app/" target="_blank" rel="noreferrer" whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="bg-gradient-to-r from-gray-900 to-black border border-red-900/50 hover:border-red-500 text-white font-bold px-6 py-3 rounded-xl flex items-center gap-2 transition-all shadow-[0_0_15px_rgba(220,38,38,0.2)]">
+              <ShieldAlert size={18}/> NEX BANNING
             </motion.a>
           </motion.div>
 
@@ -241,7 +252,7 @@ export default function App() {
               </motion.div>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <FighterBox title="Admins HQ" desc="The core command center." icon={ShieldAlert} link="#" />
-                <FighterBox title="Community" desc="The frontline soldiers." icon={Users} link="#" />
+                <FighterBox title="Community" desc="The frontline soldiers." icon={Users} link="https://t.me/ll_BHAICHARA_ON_TOP_ll" />
                 <FighterBox title="Group Admins" desc="Network moderators." icon={Shield} link="#" />
               </div>
               <p className="text-gray-500 text-xs mt-4 italic">* Admins website linking initialization pending.</p>
@@ -319,6 +330,35 @@ export default function App() {
           </motion.div>
         </motion.section>
 
+        {/* 🔗 NEW: NETWORK DIRECTORY (Quick Access Buttons) */}
+        <motion.section className="py-20 p-6 md:p-12 max-w-7xl mx-auto border-t border-white/5" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+          <motion.div variants={fadeInUp} className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-white uppercase tracking-widest">Network Directory</h2>
+            <p className="text-gray-500 mt-2 font-bold tracking-[0.2em] uppercase text-xs">Access All Sectors</p>
+          </motion.div>
+          
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="#bots" className="bg-white/5 hover:bg-purple-600/20 border border-white/10 hover:border-purple-500 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <BotMessageSquare size={20} className="text-purple-400"/> Our Bots
+            </a>
+            <a href="https://t.me/ll_BHAICHARA_ON_TOP_ll" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-red-600/20 border border-white/10 hover:border-red-500 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <Users size={20} className="text-red-400"/> Our Community
+            </a>
+            <a href="https://nexbanig.vercel.app/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-gray-600/20 border border-white/10 hover:border-gray-500 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <Ban size={20} className="text-gray-400"/> Our Banning
+            </a>
+            <a href="https://bhaichra.vercel.app/" target="_blank" rel="noreferrer" className="bg-white/5 hover:bg-red-900/40 border border-white/10 hover:border-red-600 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <Swords size={20} className="text-red-600"/> Our Fighters
+            </a>
+            <a href="#intel" className="bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <Globe size={20} className="text-blue-400"/> Our Websites
+            </a>
+            <a href="minecraft://Yukiapi.site:25565" className="bg-white/5 hover:bg-green-600/20 border border-white/10 hover:border-green-500 text-white font-bold px-6 py-4 rounded-2xl flex items-center gap-3 transition-all">
+              <Gamepad2 size={20} className="text-green-400"/> Minecraft Server
+            </a>
+          </div>
+        </motion.section>
+
         {/* 📞 FOOTER & COMMUNITY */}
         <footer id="community" className="border-t border-white/5 bg-[#010101] pt-24 pb-12 px-6 relative z-20">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
@@ -356,4 +396,4 @@ export default function App() {
       </div>
     </div>
   );
-}
+            }
