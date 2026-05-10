@@ -7,6 +7,11 @@ import {
 } from 'lucide-react';
 import { FaGithub, FaInstagram, FaTelegramPlane } from 'react-icons/fa';
 import Background from './components/Background';
+import AdminPanel from './AdminPanel';
+
+// App ke andar, sabse upar:
+const isAdmin = window.location.pathname === '/admin';
+if (isAdmin) return <AdminPanel />;
 
 // --- ANIMATIONS ---
 const staggerContainer = {
